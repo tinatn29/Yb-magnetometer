@@ -164,11 +164,3 @@ class ATSolver():
 
 		return results
 
-
-
-
-
-
-
-
-
