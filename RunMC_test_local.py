@@ -1,6 +1,7 @@
 import numpy as np
 import csv
 import sys
+import ast
 from ATSolver import ATSolver
 import matplotlib.pyplot as plt
 
@@ -13,7 +14,9 @@ This file is for local testing of the new code format
 # Set simulation parameters
 delta_mod = 20  # modulation freq = 20 * gamma
 theta_pol = np.pi / 2  # polarization angle
-light_fields = [(10, -1), (10, 1)]  # [(Omega1, delta1), (Omega2, delta2), ...]
+light_fields_arg = sys.argv[1]
+light_fields = ast.literal_eval(light_fields_arg) # convert string argument to list of tuples
+# [(Omega1, delta1), (Omega2, delta2), ...]
 # detuning from m=0 level = delta * delta_mod 
 # delta=2 -> 2nd harmonic sideband with detuning = 2*delta_mod from resonance
 
@@ -23,7 +26,7 @@ AT = ATSolver(light_fields, delta_mod, theta_pol)
 # Prepare input B-field array and velocity
 # vx_input = np.load('vx_input_1000.npy') # load transverse vx from file
 vx_input = np.array([0, 0.01]) # test input
-AT.b_array = np.linspace(0, 60, 61) # linear gradient in b
+AT.b_array = np.linspace(0, 30, 31) # linear gradient in b
 AT.b_direction = 2 # b along z-axis
 
 # calculate Doppler-averaged results
