@@ -38,10 +38,6 @@ AT.b_array = np.load(b_array_fname)
 results = AT.SolveME_parallel_b_array(vx_input)
 result = np.mean(results, axis=0) # average down each column
 
-# Compute rho_e, Iy (with Hanle effect)
-rho_e = result[:, 0] + result[:, 1] + result[:, 2]
-Iy = result[:, 0] + 2*result[:, 1] + result[:, 2] - 2*result[:, 3]
-
 # Filename from argument
 filename = sys.argv[5]
-np.savetxt(filename, image, delimiter=',') # save result as csv 
+np.savetxt(filename, result, delimiter=',') # save result as csv 
