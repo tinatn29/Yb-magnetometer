@@ -29,7 +29,7 @@ with open(job_file, 'w') as fh:
 	fh.writelines("#SBATCH --qos=normal\n")
 	fh.writelines("#SBATCH -p hns\n")
 	fh.writelines("ml python/3.6.1\n")
-	fh.writelines([f"python3 $SCRATCH/AT_data/RunMC_configs_fixed1000.py {delta_mod} {theta} ", """, light_fields, """,\
+	fh.writelines([f"python3 $SCRATCH/AT_data/RunMC_configs_fixed1000.py {delta_mod} {theta} ", '"', light_fields, '"',\
 		f" {delta_mod:.0f}_fixed1000_{theta:.2f}pi_{num_freqs}bands_bz75.csv"])
 
-os.system("sbatch %s" %job_file)
+# os.system("sbatch %s" %job_file)
