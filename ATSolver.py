@@ -107,12 +107,18 @@ class ATSolver():
 		output = mesolve(H, self.psi0, self.tlist, c_ops=self.c_op_list, args=self.args)
 		# Extract steady-state rhos
 		N = len(self.tlist[self.tlist * self.args['gamma'] > 10])
-		rho = np.array(output.states[N:]) # steady state density matrix (t > 10*tau)
+		# Reset to make sure
+		self.rho11 = 0
+		self.rho22 = 0
+		self.rho33 = 0
+		self.rho13_Re = 0
+
 		for i in range(N):
-			self.rho11 += rho[i][1,1]
-			self.rho22 += rho[i][2,2]
-			self.rho33 += rho[i][3,3]
-			self.rho13_Re += rho[i][1,3]
+			rho = output.states[i+N]
+			self.rho11 += rho[1,1]
+			self.rho22 += rho[2,2]
+			self.rho33 += rho[3,3]
+			self.rho13_Re += rho[1,3]
     	
     	# calculate mean
 		self.rho11 = np.real(self.rho11 / N)
@@ -151,11 +157,11 @@ class ATSolver():
 		return result # return 2D output array [rho11, rho22, rho33, Re(rho13)]
 
 
-	def SolveME_parallel_b_array(self, vx_input):
+	def SolveME_parallel_b_array(self, vx_input, max_cores=32):
 		# Calculate Doppler averaged rho from lots of atoms using parallel computing
 		import multiprocessing as mp
 		start_time = time.time()
-		n_cores = np.amin([mp.cpu_count(), 32])
+		n_cores = np.amin([mp.cpu_count(), max_cores])
 		# Use no. of CPUs available (locally) or 32 cores maximum (Sherlock cluster)
 		pool = mp.Pool(processes=n_cores)
 
