@@ -9,7 +9,7 @@ from ATSolver import ATSolver
 RunMC_fixed1000_bz.py 
 This file is for Sherlock submission and takes custom arguments:
 [1] <delta_mod / gamma> e.g. 20 means delta_mod = 20 * gamma
-[2] <theta / pi> e.g. 0.5 means pi/2
+[2] <theta / deg> e.g. 90 = 90 degrees = pi/2
 [3] <light_fields> as strings e.g. "[(10,-1),(10,1)]" would create 2 sidebands with 
 Omega1=Omega2=10 and detunings = -1*delta_mod and 1*delta_mod from m=0 state
 [4] <b-field config> e.g. "bz.npy" to indicate the b-field input
@@ -19,7 +19,7 @@ Omega1=Omega2=10 and detunings = -1*delta_mod and 1*delta_mod from m=0 state
 
 # Set simulation parameters
 delta_mod = float(sys.argv[1])  # modulation freq
-theta_pol = float(sys.argv[2]) * np.pi  # polarization angle
+theta_pol = float(sys.argv[2]) * np.pi / 180  # convert polarization angle from deg to rad
 light_fields_arg = sys.argv[3]
 light_fields = ast.literal_eval(light_fields_arg) # convert string argument to list of tuples
 # [(Omega1, delta1), (Omega2, delta2), ...]
