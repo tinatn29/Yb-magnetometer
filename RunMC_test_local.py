@@ -34,7 +34,7 @@ b_array_fname = "./configs/" + sys.argv[2]
 AT.b_array = np.load(b_array_fname)
 
 # calculate Doppler-averaged results
-results = AT.SolveME_parallel_b_array(vx_input)
+results = AT.SolveME_parallel_b_array(vx_input, max_cores=4)
 result = np.mean(results, axis=0) # average down each column
 
 # Compute rho_e, Iy (with Hanle effect)
