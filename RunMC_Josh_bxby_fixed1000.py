@@ -31,26 +31,15 @@ light_fields = ast.literal_eval(light_fields_arg) # convert string argument to l
 AT = ATSolver(light_fields, delta_mod, theta_pol)
 
 # Prepare input B-field array and velocity
-# vx_input = np.load('./configs/vx_input_1000.npy') # load transverse vx from file
-vx_input = np.array([0, 0.01, 0.1, 0.2]) # test input
+vx_input = np.load('./configs/vx_input_1000.npy') # load transverse vx from file
 
 bz = np.linspace(-15, 15, 121)
 bx_fixed = float(sys.argv[4]) # take bx from argument
 bx = np.ones_like(bz) * bx_fixed
 by_fixed = float(sys.argv[5]) # take by from argument
 by = np.ones_like(bz) * by_fixed 
-
 AT.b_array = np.array([bx, by, bz]).transpose()
 
-# calculate Doppler-averaged results
-results = AT.SolveME_parallel_b_array(vx_input, max_cores=4)
-result = np.mean(results, axis=0) # average down each column
-
-# Filename from argument
-filename = "test_20230504.csv"
-np.savetxt(filename, result, delimiter=',') # save result as csv 
-
-'''
 # calculate Doppler-averaged results
 results = AT.SolveME_parallel_b_array(vx_input)
 result = np.mean(results, axis=0) # average down each column
@@ -58,4 +47,3 @@ result = np.mean(results, axis=0) # average down each column
 # Filename from argument
 filename = sys.argv[6]
 np.savetxt(filename, result, delimiter=',') # save result as csv 
-'''
