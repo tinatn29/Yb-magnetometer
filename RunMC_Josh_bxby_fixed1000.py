@@ -31,7 +31,7 @@ light_fields = ast.literal_eval(light_fields_arg) # convert string argument to l
 AT = ATSolver(light_fields, delta_mod, theta_pol)
 
 # Prepare input B-field array and velocity
-vx_input = np.load('./configs/vx_input_1000.npy') # load transverse vx from file
+vx_input = np.load('./configs/vx_input_500.npy') # load transverse vx from file
 
 bz = np.linspace(-15, 15, 121)
 bx_fixed = float(sys.argv[4]) # take bx from argument
