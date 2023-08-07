@@ -98,7 +98,7 @@ class ATSolver():
 	======== Time-dependent solver (4 fields) with Doppler ========
 	'''
 	def SolveME_single(self):
-		# Solve for steady-state rho11, rho22, rho33, rho13 
+		# Solve for steady-state rho11, rho22, rho33, rho13 for a single atom 
 		# Single velocity, single b-field value
 		H0 = H0_4fields(self.args)
 		H = [H0, [self.H_cos, coeff_sigma_terms], [self.H_cos_dag, coeff_sigma_terms_conj], \
@@ -130,10 +130,13 @@ class ATSolver():
 	======== Solve for rhos for a 1D b-array ========
 	'''
 	def SolveME_single_b_array(self, vx):
-		# make sure self.b_array and self.b_direction are set
+		# This function calculates the density matrix (steady-state) for a range (array) of B-field values
+		# make sure self.b_array and self.b_direction are set for this function to work properly
 		self.args['vx'] = vx # set atom's velocity
 		N = len(self.b_array)
 		dim = len(np.shape(self.b_array)) # dimensions of b_array (1 or 2)
+
+		# result array [rho11, rho22, rho33, Re(rho13)] each row (each value of b_array)
 		result = np.zeros((len(self.b_array), 4)) # 2D output dim(len(b_array), 4)
 
 		# Iterate through all values in b_array
@@ -165,7 +168,7 @@ class ATSolver():
 		# Use no. of CPUs available (locally) or 32 cores maximum (Sherlock cluster)
 		pool = mp.Pool(processes=n_cores)
 
-		results = pool.map(self.SolveME_single_b_array, vx_input) # return images
+		results = pool.map(self.SolveME_single_b_array, vx_input)
 		print('Time elapsed: {0:.2f} sec'.format(time.time() - start_time))
 
 		return results
