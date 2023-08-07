@@ -49,7 +49,7 @@ vx_input = np.load(vx_fname) # load transverse vx from file
 
 # calculate Doppler-averaged results
 results = AT.SolveME_parallel_b_array(vx_input)
-result = np.mean(results, axis=0) # average down each column
+result = np.mean(results, axis=0) # Taking Doppler average (average results over all atoms' velocities present)
 
 # Filename from argument
 filename = sys.argv[8]

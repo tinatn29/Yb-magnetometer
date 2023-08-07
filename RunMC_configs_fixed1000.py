@@ -6,7 +6,7 @@ from ATSolver import ATSolver
 
 
 '''
-RunMC_fixed1000_bz.py 
+RunMC_configs_fixed1000.py 
 This file is for Sherlock submission and takes custom arguments:
 [1] <delta_mod / gamma> e.g. 20 means delta_mod = 20 * gamma
 [2] <theta / deg> e.g. 90 = 90 degrees = pi/2
@@ -32,11 +32,10 @@ AT = ATSolver(light_fields, delta_mod, theta_pol)
 # Prepare input B-field array and velocity
 vx_input = np.load('./configs/vx_input_1000.npy') # load transverse vx from file
 b_array_fname = "./configs/" + sys.argv[4]
-AT.b_array = np.load(b_array_fname)
 
 # calculate Doppler-averaged results
 results = AT.SolveME_parallel_b_array(vx_input)
-result = np.mean(results, axis=0) # average down each column
+result = np.mean(results, axis=0) # Taking Doppler average (average results over all atoms' velocities present)
 
 # Filename from argument
 filename = sys.argv[5]
