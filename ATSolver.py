@@ -162,6 +162,7 @@ class ATSolver():
 
 	def SolveME_parallel_b_array(self, vx_input, max_cores=32):
 		# Calculate Doppler averaged rho from lots of atoms using parallel computing
+		# vx_input corresponds to atoms' velocities we are using
 		import multiprocessing as mp
 		start_time = time.time()
 		n_cores = np.amin([mp.cpu_count(), max_cores])

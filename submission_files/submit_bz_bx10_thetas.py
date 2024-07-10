@@ -9,7 +9,7 @@ import numpy as np
 # single job submission (1000 atoms)
 delta_mod = float(sys.argv[1]) # [1] <delta_mod / gamma> e.g. 20 means delta_mod = 20 * gamma
 light_fields = sys.argv[2] # [2] light fields as strings e.g. "[(10,-1),(10,1)]"
-b_array_fname = "bz_linear_75_bx10.npy" # basic bz linear gradient from 0 to 75
+b_array_fname = "bz_linear_75_bx10.npy" # bz linear gradient from 0 to 75 with bx=10
 
 light_fields_list = ast.literal_eval(light_fields) # list format of light_fields
 num_freqs = len(light_fields_list)
