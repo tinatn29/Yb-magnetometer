@@ -25,25 +25,26 @@ AT = ATSolver(light_fields, delta_mod, theta_pol)
 
 # Prepare input B-field array and velocity
 # vx_input = np.load('vx_input_1000.npy') # load transverse vx from file
-vx_input = np.array([0, 0.01]) # test input
+vx_input = np.array([0, 0.01, 0.1, 1]) # test input
 # AT.b_array = np.linspace(0, 30, 31) # linear gradient in b
 # AT.b_direction = 2 # b along z-axis
 
 # Test load b fields from file
-b_array_fname = "./configs/" + sys.argv[2]
-AT.b_array = np.load(b_array_fname)
+# b_array_fname = "./configs/" + sys.argv[2]
+AT.b_array = np.linspace(-40, 40, 81)
+AT.b_direction = 2
 
 # calculate Doppler-averaged results
-results = AT.SolveME_parallel_b_array(vx_input, max_cores=4)
+results = AT.SolveME_parallel_b_array(vx_input)
 result = np.mean(results, axis=0) # average down each column
 
 # Compute rho_e, Iy (with Hanle effect)
 rho_e = result[:, 0] + result[:, 1] + result[:, 2]
-Iy = result[:, 0] + 2*result[:, 1] + result[:, 2] - 2*result[:, 3]
+Iy = result[:, 1] + (1/2)*(result[:, 0] + result[:, 2] - 2*result[:, 3])
 
 fig, ax = plt.subplots()
-plt.plot(AT.b_array[:,2], rho_e, label=r"$\rho_e$")
-plt.plot(AT.b_array[:,2], Iy, label=r"$I_y$")
+plt.plot(AT.b_array, rho_e, label=r"$\rho_e$")
+plt.plot(AT.b_array, Iy, label=r"$I_y$")
 ax.set_xlabel(r"$b_z (\gamma)$")
 ax.set_ylabel(r"Fluorescence")
 ax.set_xlim([np.min(AT.b_array), np.max(AT.b_array)])

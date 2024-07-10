@@ -21,8 +21,8 @@ This file is for Sherlock submission and takes fixed bx, by values (with weak bz
 # Set simulation parameters
 delta_mod = float(sys.argv[1])  # modulation freq
 theta_pol = float(sys.argv[2]) * np.pi / 180  # convert polarization angle from deg to rad
-Omega0 = float(sys.argv[3]) # Rabi freq of the carrier
-duty = float(sys.argv[4]) # duty cycle
+Omega0 = float(sys.argv[3]) # Rabi freq of the carrier normally use 10
+duty = float(sys.argv[4]) # duty cycle = 0.1
 light_fields = []
 
 # Set light fields
