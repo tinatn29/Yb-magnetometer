@@ -4,7 +4,7 @@ Numerical model to calculate Yb atomic fluorescence when
 This repo contains Python codes developed for the work published in Na Narong, et al. (preprint) [[1]](arxiv link) and TN's PhD thesis [[2]](link to thesis).
 
 ## Numerical calculation of Yb atomic fluorescence
-We derived the time-dependent Hamiltonian matrix H(t) for the four-level atom, and then used the `mesolve` function from the [QuTiP](https://qutip.org/docs/4.0.2/index.html) library to solve the [Linblad Master Equation](https://qutip.org/docs/latest/guide/dynamics/dynamics-master.html) for density matrix. 
+We derived the time-dependent Hamiltonian matrix $H(t)$ for the four-level atom, and then used the `mesolve` function from the [QuTiP](https://qutip.org/docs/4.0.2/index.html) library to solve the [Linblad Master Equation](https://qutip.org/docs/latest/guide/dynamics/dynamics-master.html) for density matrix. 
 
 From the density matrix, we extract the total excited-state population $\rho_e$ (total fluorescence is directly proportional to $\rho_e$).
 We also compute the fluorescence emitted vertically ($I_y$). The derivation presented in [2] is based on Jackson & Durfee [3].
