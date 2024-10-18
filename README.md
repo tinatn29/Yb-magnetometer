@@ -2,11 +2,11 @@
 This repository contains the code developed for the manuscript \
 **“Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms”** \
 Authors: Tanaporn Na Narong, Hongquan Li, Joshua Tong, Mario Dueñas, and Leo Hollberg \
-Submitted: October 2024 (preprint is available [here](arxiv link)) \
+Submitted: 2024 (preprint is available [here](arxiv link)) \
 \
 Details of the work and code documentation are available in TN's PhD thesis \
 **"Slow and fast atoms : modeling strong field effects on Yb for slowing and quantum imaging of magnetic fields"** \
-Tanaporn Na Narong, 2023 (available online [here](https://searchworks.stanford.edu/view/in00000001635)).
+Author: Tanaporn Na Narong (2023) (available online [here](https://searchworks.stanford.edu/view/in00000001635)).
 
 ## Installation
 To run the code, first clone the repository and install the required dependencies:
