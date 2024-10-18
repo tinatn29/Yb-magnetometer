@@ -1,13 +1,26 @@
-# Yb-magnetometer [DRAFT]
+# Yb-magnetometer
 This repository contains the code developed for the manuscript \
-“Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms”
+**“Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms”** \
+Authors: Tanaporn Na Narong, Hongquan Li, Joshua Tong, Mario Dueñas, and Leo Hollberg \
+Submitted: October 2024 (preprint is available [here]()) \
+Details of the work and code documentation is available in TN's PhD thesis 
+**"Slow and fast atoms : modeling strong field effects on Yb for slowing and quantum imaging of magnetic fields"** (2023)[[2]](https://searchworks.stanford.edu/view/in00000001635).
 
+## Installation
+To run the code, first clone the repository and install the required dependencies:
+```
+git clone https://github.com/tinatn29/Yb-magnetometer.git
+cd Yb-magnetometer
+```
+Make sure you have Python 3.6 or higher, and the following libraries installed: 
+- [Numpy](https://numpy.org/)
+- [QuTiP: Quantum Toolbox in Python](https://qutip.org/docs/4.0.2/index.html)
+- [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) 
+- [matplotlib](https://matplotlib.org/)
+- [pandas](https://pandas.pydata.org/)
+- [jupyter notebook](https://jupyter.org/)
 
-
-the work published in Na Narong, et al. (preprint) [[1]](arxiv link) and TN's PhD thesis (2023)[[2]](https://searchworks.stanford.edu/view/in00000001635).
-Numerical model to calculate Yb atomic fluorescence 
-
-## Numerical calculation of Yb atomic fluorescence
+## Usage
 We derived the time-dependent Hamiltonian matrix $H(t)$ for the four-level atom, and then used the `mesolve` function from the [QuTiP](https://qutip.org/docs/4.0.2/index.html) library to solve the [Linblad Master Equation](https://qutip.org/docs/latest/guide/dynamics/dynamics-master.html) for density matrix. 
 
 From the density matrix, we extract the total excited-state population $\rho_e$ (total fluorescence is directly proportional to $\rho_e$).
@@ -16,16 +29,6 @@ We also compute the fluorescence emitted vertically ($I_y$). The derivation pres
 ## Documentation
 Detailed documentation of the code is provided in Appendix B of TN's thesis [2].
 
-## Software and Libraries
-- Python 3.6
-- [Numpy](https://numpy.org/)
-- [QuTiP: Quantum Toolbox in Python](https://qutip.org/docs/4.0.2/index.html)
-- [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) 
-- [matplotlib](https://matplotlib.org/)
-- [pandas](https://pandas.pydata.org/)
-- [jupyter notebook](https://jupyter.org/)
-  
-## References
-1. Paper / arxiv
-2. Na Narong, Tanaporn (thesis)
-3. Jackson & Durfee paper
+## Citing
+If you use this code in your work, please cite the manuscript and the thesis.
+
