@@ -9,13 +9,14 @@ Details of the work and code documentation are available in TN's PhD thesis \
 Author: Tanaporn Na Narong (2023) (available online [here](https://searchworks.stanford.edu/view/in00000001635)).
 
 ## Installation
-To run the code, first clone the repository and install the required dependencies:
+Clone the repository and make sure all the required packages are installed. We used Sherlock, a HPC cluster at Stanford University to run some of the calculations. Make sure to also upload all the files to the Sherlock/HPC directory as needed.
 ```
 git clone https://github.com/tinatn29/Yb-magnetometer.git
 cd Yb-magnetometer
 ```
 Make sure you have Python 3.6 or higher, and the following libraries installed: 
 - [Numpy](https://numpy.org/)
+- [Scipy](https://scipy.org/) 
 - [QuTiP: Quantum Toolbox in Python](https://qutip.org/docs/4.0.2/index.html)
 - [multiprocessing](https://docs.python.org/3/library/multiprocessing.html) 
 - [matplotlib](https://matplotlib.org/)
@@ -23,10 +24,9 @@ Make sure you have Python 3.6 or higher, and the following libraries installed:
 - [jupyter notebook](https://jupyter.org/)
 
 ## Usage
-We derived the time-dependent Hamiltonian matrix $H(t)$ for the four-level atom, and then used the `mesolve` function from the [QuTiP](https://qutip.org/docs/4.0.2/index.html) library to solve the [Linblad Master Equation](https://qutip.org/docs/latest/guide/dynamics/dynamics-master.html) for density matrix. 
+The main class file `ATSolver.py` contains functions used to calculate Yb atomic fluorescence (with and without Doppler averaging) in an arbitrary magnetic field, when driven by mutiple strong, coherent light fields that are modulation sidebands of a 556 nm laser. The optical fields are driving the 1S0-3P1 transition in Yb in a 4-level V-configuration. \
 
-From the density matrix, we extract the total excited-state population $\rho_e$ (total fluorescence is directly proportional to $\rho_e$).
-We also compute the fluorescence emitted vertically ($I_y$). The derivation presented in [2] is based on the supplemental material of Jackson & Durfee (2019)[3].
+To model this 4-level system, we began by deriving the time-dependent Hamiltonian matrix $H(t)$ for the four-level atom, and then used the `mesolve` function from the [QuTiP](https://qutip.org/docs/4.0.2/index.html) library to solve the [Linblad Master Equation](https://qutip.org/docs/latest/guide/dynamics/dynamics-master.html) for the density matrix $\rho$, from which we can compute the total fluorescence and the fluorescence emitted along the camera direction ($I_y$). We adapted the analysis in Jackson & Durfee (2019) to compute $I_y$.
 
 ## Documentation
 Detailed documentation of the code is provided in Appendix B of [TN's thesis](https://searchworks.stanford.edu/view/in00000001635).
