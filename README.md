@@ -1,7 +1,12 @@
 # Yb-magnetometer [DRAFT]
-Numerical model to calculate Yb atomic fluorescence when 
+This repository contains the code developed for the manuscript
+*“Quantum States Imaging of Magnetic Field Contours"*
+based on Autler-Townes Effect in Yb Atoms”
 
-This repo contains Python codes developed for the work published in Na Narong, et al. (preprint) [[1]](arxiv link) and TN's PhD thesis (2023)[[2]](link to thesis).
+
+
+the work published in Na Narong, et al. (preprint) [[1]](arxiv link) and TN's PhD thesis (2023)[[2]](https://searchworks.stanford.edu/view/in00000001635).
+Numerical model to calculate Yb atomic fluorescence 
 
 ## Numerical calculation of Yb atomic fluorescence
 We derived the time-dependent Hamiltonian matrix $H(t)$ for the four-level atom, and then used the `mesolve` function from the [QuTiP](https://qutip.org/docs/4.0.2/index.html) library to solve the [Linblad Master Equation](https://qutip.org/docs/latest/guide/dynamics/dynamics-master.html) for density matrix. 
