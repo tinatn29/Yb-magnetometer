@@ -1,7 +1,6 @@
 # Yb-magnetometer [DRAFT]
-This repository contains the code developed for the manuscript
-*“Quantum States Imaging of Magnetic Field Contours"*
-based on Autler-Townes Effect in Yb Atoms”
+This repository contains the code developed for the manuscript \
+“Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms”
 
 
 
