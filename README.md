@@ -29,7 +29,7 @@ From the density matrix, we extract the total excited-state population $\rho_e$ 
 We also compute the fluorescence emitted vertically ($I_y$). The derivation presented in [2] is based on the supplemental material of Jackson & Durfee (2019)[3].
 
 ## Documentation
-Detailed documentation of the code is provided in Appendix B of TN's thesis [2].
+Detailed documentation of the code is provided in Appendix B of [TN's thesis](https://searchworks.stanford.edu/view/in00000001635).
 
 ## Citing
 If you use this code in your work, please cite the manuscript and the thesis.
