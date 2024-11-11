@@ -37,7 +37,7 @@ Detailed documentation of the code is provided in Appendix B of [TN's thesis](ht
 
 ## Citing
 If you use this code in your work, please cite the manuscript and the thesis.
-- Na Narong, T., Li, H., Tong, J., Dueñas, M., & Hollberg, L. (2019). Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms...
+- Na Narong, T., Li, H., Tong, J., Dueñas, M., & Hollberg, L. Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms...
 - Na Narong, T. (2023). *Slow and fast atoms : modeling strong field effects on Yb for slowing and quantum imaging of magnetic fields*. [Doctoral dissertation, Stanford University]
 
 **Additional reference:**
