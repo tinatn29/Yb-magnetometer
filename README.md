@@ -42,7 +42,7 @@ To model this 4-level system, we began by deriving the time-dependent Hamiltonia
 Detailed documentation of the code is provided in Appendix B of [TN's thesis](https://searchworks.stanford.edu/view/in00000001635).
 
 ## License
-This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT license. See the [LICENSE](LICENSE.txt) file for details.
 
 ## Citing
 If you use this code in your work, please cite the manuscript and the thesis.
