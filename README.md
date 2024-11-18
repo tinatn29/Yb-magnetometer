@@ -41,6 +41,9 @@ To model this 4-level system, we began by deriving the time-dependent Hamiltonia
 ## Documentation
 Detailed documentation of the code is provided in Appendix B of [TN's thesis](https://searchworks.stanford.edu/view/in00000001635).
 
+## License
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for details.
+
 ## Citing
 If you use this code in your work, please cite the manuscript and the thesis.
 - Na Narong, T., Li, H., Tong, J., Dueñas, M., & Hollberg, L. Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms...
