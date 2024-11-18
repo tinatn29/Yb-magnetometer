@@ -23,6 +23,11 @@ Make sure you have Python 3.6 or higher, and the following libraries installed:
 - [pandas](https://pandas.pydata.org/)
 - [jupyter notebook](https://jupyter.org/)
 
+With `conda`, you can create a new environment from the `environment.yml` file on this repository and activate it.
+```
+conda env create --file environment.yml --name new_env_name
+```
+
 ## Usage
 The main class file `ATSolver.py` contains functions used to calculate Yb atomic fluorescence (with and without Doppler averaging) in an arbitrary magnetic field, when driven by mutiple strong, coherent light fields that are modulation sidebands of a 556 nm laser. The optical fields are driving the 1S0-3P1 transition in Yb in a 4-level V-configuration.
 
