@@ -26,6 +26,7 @@ Make sure you have Python 3.6 or higher, and the following libraries installed:
 With `conda`, you can create a new environment from the `environment.yml` file on this repository and activate it.
 ```
 conda env create --file environment.yml --name new_env_name
+conda activate new_env_name
 ```
 
 ## Usage
