@@ -36,7 +36,7 @@ To model this 4-level system, we began by deriving the time-dependent Hamiltonia
 
 - `RunMC_.py` files import the functions in `ATSolver.py` to run different simulations
 - `configs/` folder contains Numpy arrays of magnetic field and atoms' velocities used in the simulations
-- `submission_files/` folder contains the Python scripts for job submission on the Sherlock cluster 
+- `submission_files/` folder contains the Python scripts that generate shell scripts (`.sh` files) for job submission on the Sherlock cluster 
 
 ## Documentation
 Detailed documentation of the code is provided in Appendix B of [TN's thesis](https://searchworks.stanford.edu/view/in00000001635).
