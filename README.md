@@ -2,7 +2,7 @@
 This repository contains the code developed for the manuscript \
 **“Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms”** \
 Authors: Tanaporn Na Narong, Hongquan Li, Joshua Tong, Mario Dueñas, and Leo Hollberg \
-Submitted: 2024 (preprint is available [here](arxiv link)) \
+Submitted: 2024 (preprint is available [here](https://arxiv.org/abs/2411.14426) \
 \
 Details of the work and code documentation are available in TN's PhD thesis \
 **"Slow and fast atoms : modeling strong field effects on Yb for slowing and quantum imaging of magnetic fields"** \
@@ -46,8 +46,8 @@ This project is licensed under the MIT license. See the [LICENSE](LICENSE.txt) f
 
 ## Citing
 If you use this code in your work, please cite the manuscript and the thesis.
-- Na Narong, T., Li, H., Tong, J., Dueñas, M., & Hollberg, L. Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms...
-- Na Narong, T. (2023). *Slow and fast atoms : modeling strong field effects on Yb for slowing and quantum imaging of magnetic fields*. [Doctoral dissertation, Stanford University]
+- Na Narong, T., Li, H., Tong, J., Dueñas, M., & Hollberg, L. *"Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms."* [arXiv:2411.14426](https://arxiv.org/abs/2411.14426) 
+- Na Narong, T. (2023). *"Slow and fast atoms : modeling strong field effects on Yb for slowing and quantum imaging of magnetic fields"*. [Doctoral dissertation, Stanford University]
 
 **Additional reference:**
 - Jackson, J. S., & Durfee, D. S. (2019). Magneto-Optical Trap Field Characterization with the Directional Hanle Effect. Scientific Reports, 9(1), 8896.
