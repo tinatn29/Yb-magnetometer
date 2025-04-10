@@ -1,8 +1,10 @@
+<img width="668" alt="stripes" src="https://github.com/user-attachments/assets/a52b969c-532f-45d1-9ff4-5de240ee4a7b" />
+
 # Yb-magnetometer
 This repository contains the code developed for the manuscript \
 **“Quantum States Imaging of Magnetic Field Contours based on Autler-Townes Effect in Yb Atoms”** \
 Authors: Tanaporn Na Narong, Hongquan Li, Joshua Tong, Mario Dueñas, and Leo Hollberg \
-Submitted: 2024 (preprint is available [here](https://arxiv.org/abs/2411.14426) \
+Accepted (Physical Review Letters): 2024 (preprint is available [here](https://arxiv.org/abs/2411.14426) \
 \
 Details of the work and code documentation are available in TN's PhD thesis \
 **"Slow and fast atoms : modeling strong field effects on Yb for slowing and quantum imaging of magnetic fields"** \
